@@ -10,7 +10,6 @@
   html {
     font-size: 62.5%;
     color: black;
-    font-family: "Montserrat", sans-serif;
     font-weight: 100;
     line-height: 2;
   }
@@ -21,3 +20,45 @@
   }
   
   
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  
+  img{
+    display: block;
+    margin: 0 auto;
+    height: 20rem;
+  }
+  
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
+  main {
+    margin: 2rem auto 0;
+  }
+  
+  .sectionInput, .sectionDrink {
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+    width: 90%;
+    background: rgb(224, 201, 148);
+  }
+  
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+  
+  h3 {
+    font-size: 2.4rem;
+    width: 60%;
+    margin: 0 auto;
+    padding: 3rem 0;
+  }
