@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;500;800&display=swap');
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* I'm giving a base font-size of 62.5% which equals to 10px. Therefore, 1em = 10px. This will allow a simpler calculation of font-sizes, and provide a better user interactivity on different devices and being user friendly. */
+  
+  html {
+    font-size: 62.5%;
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    line-height: 2;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
