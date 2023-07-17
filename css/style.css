@@ -52,25 +52,32 @@ main {
 }
   
 h3 {
- 
     width: 60%;
     margin: 0 auto;
     padding: 3rem 0;
-  }
+    color: rgb(27, 123, 150);
+}
 
 img{
     display: block;
     margin: 0 auto;
     height: 20rem;
+    border-radius: 16px;
 }
 
 img:hover {
     transform: scale(1.1);
     transition: all 0.8s ease;
 }
-  
 
-/*  */
+
+.drinkInput {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 input {
@@ -96,13 +103,12 @@ button {
     width: 15rem;
     padding: 5px;
     text-align: center;
-    margin-left: -0.3%;
     border: 1px solid rgb(27, 123, 150);
+    border-left: 0px;
     border-radius: 0 5px 5px 0;
     color: rgb(27, 123, 150);
     background: none;
     cursor: pointer;
-    margin-bottom: 2em;
 }
   
 button:hover {
