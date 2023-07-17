@@ -62,7 +62,27 @@ img{
     height: 20rem;
 }
   
+
+/*  */
+
+
+input {
+    font-weight: 500;
+    font-size: 1.4rem;
+    height: 3rem;
+    width: 15rem;
+    text-align: center;
+    border: 1px solid rgb(27, 123, 150);
+    caret-color: rgb(27, 123, 150);
+}
   
+input:focus {
+    outline: none;
+    box-shadow: 0 0 20px #9ecaed;
+}
+  
+
+
 /* ADDITIONAL STYLES*/
   
   
