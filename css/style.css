@@ -50,6 +50,15 @@ main {
     background: rgb(224, 201, 148);
     height: 100%;
 }
+
+.sectionInput {
+    border-radius: 16px 16px 0 0;
+}
+
+.sectionDrink {
+    min-height: 67rem;
+    border-radius: 0 0 16px 16px;
+}
   
 h3 {
     width: 60%;
