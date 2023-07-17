@@ -81,7 +81,28 @@ input:focus {
     box-shadow: 0 0 20px #9ecaed;
 }
   
-
+button {
+    font-weight: 600;
+    font-size: 1.4rem;
+    height: 3rem;
+    width: 15rem;
+    padding: 5px;
+    text-align: center;
+    margin-left: -0.3%;
+    border: 1px solid rgb(27, 123, 150);
+    color: rgb(27, 123, 150);
+    background: none;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+  
+button:hover {
+    color: white;
+    background-color: rgb(27, 123, 150);
+    border: 1px solid rgb(27, 123, 150);
+    box-shadow: 0 0 20px #9ecaed;
+    transition: all 0.5s ease;
+}
 
 /* ADDITIONAL STYLES*/
   
