@@ -1,5 +1,11 @@
 document.querySelector('button').addEventListener('click', getDrink)
 
+document.querySelector('input').addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    getDrink();
+  }
+});
+
 function getDrink() {
     let drink = document.querySelector('input').value
 
