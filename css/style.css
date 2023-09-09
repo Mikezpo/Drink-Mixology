@@ -15,8 +15,13 @@ html {
 }
   
 body {
-    margin: 2rem;
+    padding: 2rem;
     padding: 0;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1658243253492-6c5129e969d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* FONT SIZE */
@@ -47,7 +52,7 @@ main {
     padding: 2rem 0;
     text-align: center;
     width: 100%;
-    background: rgb(224, 201, 148);
+    background: none;
     height: 100%;
 }
 
@@ -118,6 +123,7 @@ button {
     color: rgb(27, 123, 150);
     background: none;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
   
 button:hover {
@@ -125,7 +131,7 @@ button:hover {
     background-color: rgb(27, 123, 150);
     border: 1px solid rgb(27, 123, 150);
     box-shadow: 0 0 20px #9ecaed;
-    transition: all 0.5s ease;
+    
 }
 
 /* ADDITIONAL STYLES*/
