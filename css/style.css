@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;1,700&family=Source+Sans+3:ital,wght@0,200;0,400;0,600;0,900;1,400;1,600&display=swap');
 
 /* BOX MODEL HACK */
 * {
@@ -12,23 +12,32 @@ html {
     color: black;
     font-weight: 100;
     line-height: 2;
+    letter-spacing: 0.2rem;
+    font-family: 'Source Sans 3', sans-serif;
 }
   
 body {
-    padding: 2rem;
+    margin: 0;
     padding: 0;
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1658243253492-6c5129e969d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80');
+    height: 100%;
+    background: url('/images/cocktail.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    /* background: url('https://images.unsplash.com/photo-1658243253492-6c5129e969d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80'); */
+    
 }
 
 /* FONT SIZE */
 
 h1 {
-    font-size: 4rem;
+    color: rgb(40, 20, 20);
+    font-size: 2.2rem;
     font-weight: bold;
+    padding: 1.5rem 0 1rem 2rem;
+    margin: 0;
+    z-index: 5;
 }
 
 h2 {
@@ -41,12 +50,189 @@ h3 {
 
   
 /* LAYOUT */
-  
-main {
-    margin: auto 0;
-    
+
+/* Header */
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navButton {
+    position: absolute;
+    top: 2.5rem;
+    right: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 3rem;
+    height: 3rem;
+    z-index: 5;
+    transition: all 0.8s ease-in-out;
 }
   
+.navButton:hover {
+    transform: scale(1.1);
+}
+  
+.bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 3rem;
+    border: 1.2px solid rgb(40, 20, 20);
+    margin-top: 0.6rem;
+}
+  
+#barOne,
+#barThree {
+    width: 45%;
+}
+  
+#barThree {
+    margin-right: 0;
+    margin-left: auto;
+}
+  
+/* Navbar drop down menu */
+  
+.hidden {
+    display: none;
+    width: 100%;
+}
+  
+.navLinks ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.navLinks {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.navLinks.active {
+    padding: 8rem 0 2rem 0;
+    background: rgb(229, 210, 211);
+    border-bottom: 1px solid black;
+    width: 100vw;
+    max-height: 26rem;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.navLinks.active li {
+    list-style: none;
+    text-align: center;
+    margin: 1rem auto;
+    transition: all 0.8s ease-in-out;
+}
+  
+.navLinks.active li a {
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all 0.8s ease-in-out;
+    border-bottom: 2px solid rgb(229, 210, 211);
+    color: rgb(67, 86, 37);
+}
+  
+.navLinks.active li:hover {
+    transform: scale(1.1);
+}
+  
+.navLinks.active li a:hover {
+    border-bottom: 2px solid rgb(67, 86, 37);
+}
+
+/* Body */
+  
+main {
+    margin: 0 auto;
+    max-width: 110rem;
+    height: 100vh;
+    display: flex;
+}
+
+.sectionOne {
+    width: 60%;
+    max-height: 50rem;
+
+    /* border: 1px solid red; */
+}
+
+.sectionOneDiv {
+    max-width: 50rem;
+    position: relative;
+    top: 6rem;
+    left: 6rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 2rem;
+    color:rgb(67, 86, 37);
+    background: rgba(211, 196, 195, 0.9);
+    border: 2px solid rgb(67, 87, 36);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(67, 87, 36);
+}
+
+.sectionOneDiv h2 {
+    font-family: 'Lobster Two', cursive;
+}
+
+.sectionOneDiv p {
+    color: rgb(40, 20, 20);
+}
+
+.mixBtn {
+    text-decoration: none;
+    font-size: 2.6rem;
+    font-weight: bold;
+    font-family: 'Lobster Two', cursive;
+    color: white;
+    position: relative;
+    left: 0;
+    top: 4rem;
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    background: rgb(67, 87, 36);
+    border: 2px solid rgb(67, 87, 36);
+    transition: all 0.8s ease-in-out;
+
+}
+
+.mixBtn:hover {
+    transform: scale(1.04);
+    background: rgba(211, 196, 195);
+    color: rgb(67, 87, 36);
+    box-shadow: 0 0 20px rgb(67, 87, 36);
+}
+
+.sectionTwo {
+    width: 40%;
+    max-height: 50rem;
+}
+
+/*  */
+
+
+
+
+
+
+/* Drinks html */
+
 .sectionInput, .sectionDrink {
     margin: 0 auto;
     padding: 2rem 0;
@@ -134,6 +320,31 @@ button:hover {
     
 }
 
-/* ADDITIONAL STYLES*/
-  
-  
+/* Footer */
+
+footer {
+    
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background: rgb(229, 210, 211);
+}
+
+.copyrightFooter {
+    color: rgb(40, 20, 20);
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: 'Lobster Two', cursive;
+}
+
+.copyrightFooter a {
+    color: rgb(40, 20, 20);
+    text-decoration: none;
+    transition: all 0.6s ease-in-out;
+}
+
+.copyrightFooter a:hover {
+    transform: scale(1.02);
+    color: rgb(10, 106, 133);
+    font-weight: bold;
+}
