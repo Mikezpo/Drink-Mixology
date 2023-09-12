@@ -179,7 +179,7 @@ main {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
-    padding: 2rem;
+    padding: 2rem 4rem;
     color:rgb(67, 86, 37);
     background: rgba(211, 196, 195, 0.9);
     border: 2px solid rgb(67, 87, 36);
@@ -188,23 +188,26 @@ main {
 }
 
 .sectionOneDiv h2 {
+    font-size: 3.2rem;
     font-family: 'Lobster Two', cursive;
+    text-align: left;
 }
 
 .sectionOneDiv p {
+    text-align: left;
     color: rgb(40, 20, 20);
 }
 
 .mixBtn {
-    text-decoration: none;
     font-size: 2.6rem;
     font-weight: bold;
+    text-decoration: none;
     font-family: 'Lobster Two', cursive;
     color: white;
+    padding: 2rem 2.5rem;
     position: relative;
     left: 0;
     top: 4rem;
-    padding: 2rem 2.5rem;
     border-radius: 10px;
     background: rgb(67, 87, 36);
     border: 2px solid rgb(67, 87, 36);
