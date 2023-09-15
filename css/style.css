@@ -32,6 +32,8 @@ body {
 /* FONT SIZE */
 
 h1 {
+    min-width: 20rem;
+    white-space: nowrap;
     color: rgb(40, 20, 20);
     font-size: 2.2rem;
     font-weight: bold;
@@ -58,6 +60,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: none;
+    position: relative;
+    z-index: 2;
 }
 
 .navButton {
@@ -98,11 +103,6 @@ nav {
   
 /* Navbar drop down menu */
   
-.hidden {
-    display: none;
-    width: 100%;
-}
-  
 .navLinks ul {
     flex-direction: column;
     padding: 0;
@@ -112,37 +112,51 @@ nav {
 .navLinks {
     width: 100%;
     overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease-in-out;
+    max-height: 0;  
+    transition: max-height 0.3s ease-in-out, opacity 0.3s, visibility 0.2s 0.3s;
+    background: rgb(229, 210, 211);
+    border-bottom: 1px solid black;
+    position: absolute;
+    top: 0;
+    z-index: 3;
 }
 
 .navLinks.active {
     padding: 8rem 0 2rem 0;
-    background: rgb(229, 210, 211);
-    border-bottom: 1px solid black;
     width: 100vw;
+    max-height: 26rem; 
+}
+
+
+.navListContainer {
+    opacity: 0;
+    visibility: hidden;
     max-height: 26rem;
-    position: absolute;
-    top: 0;
-    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: visibility 0.2s;
+}
+
+.navLinks.active .navListContainer {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.2s 0.1s;
 }
   
-.navLinks.active li {
+.navLinks li {
     list-style: none;
     text-align: center;
     margin: 1rem auto;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
   
-.navLinks.active li a {
+.navLinks li a {
     text-decoration: none;
     padding: 1rem;
     font-size: 2rem;
     font-weight: 600;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.5s ease-in-out;
     border-bottom: 2px solid rgb(229, 210, 211);
     color: rgb(67, 86, 37);
 }

@@ -9,7 +9,6 @@ for (const item of menuItems) {
   item.addEventListener('click', () => {
     // Close the menu when an item is clicked
     navbarLinks.classList.remove('active');
-    toggleButton.checked = false;
   });
 }
 
@@ -18,17 +17,16 @@ toggleButton.addEventListener('click', (event) => {
   navbarLinks.classList.toggle('active');
 });
 
-
 // Close the menu when clicking outside of it
 document.addEventListener('click', (event) => {
-  const isClickInsideMenu = navbarLinks.contains(event.target);
+  const isClickInsideMenu = navbarLinks.contains(event.target) || event.target.classList.contains('menuWrapper');
   const isClickOnButton = event.target === toggleButton;
 
   if (!isClickInsideMenu && !isClickOnButton) {
     navbarLinks.classList.remove('active');
-    toggleButton.checked = false;
   }
 });
+
 
 // API
 
