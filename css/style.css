@@ -181,8 +181,9 @@ main {
 .sectionOne {
     width: 60%;
     max-height: 50rem;
-
-    /* border: 1px solid red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .sectionOneDiv {
@@ -195,10 +196,11 @@ main {
     font-weight: 600;
     padding: 2rem 4rem;
     color:rgb(67, 86, 37);
-    background: rgba(211, 196, 195, 0.9);
+    background: linear-gradient(45deg, rgba(211, 196, 195, 0.8), rgba(67, 86, 37, 0.8));
+    /* background: rgba(211, 196, 195, 0.9); */
     border: 2px solid rgb(67, 87, 36);
     border-radius: 10px;
-    box-shadow: 0 0 20px rgb(67, 87, 36);
+    box-shadow: 0 0 20px 5px rgba(67, 87, 36, 0.6);
 }
 
 .sectionOneDiv h2 {
@@ -223,17 +225,41 @@ main {
     left: 0;
     top: 4rem;
     border-radius: 10px;
+    /*background: linear-gradient(45deg, rgb(211, 196, 195), rgba(67, 86, 37)); */
+    border: 2px solid transparent;
     background: rgb(67, 87, 36);
-    border: 2px solid rgb(67, 87, 36);
+    overflow: hidden;
     transition: all 0.8s ease-in-out;
 
 }
 
+.mixBtn::before, 
+.mixBtn::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: rgba(211, 196, 195);
+    transition: all 0.3s;
+}
+
+.mixBtn::before {
+    top: 0;
+    left: 0;
+}
+
+.mixBtn::after {
+    bottom: 0;
+    right: 0;
+}
+
 .mixBtn:hover {
+    width: 100%;
     transform: scale(1.04);
+    /* background: linear-gradient(45deg, rgba(211, 196, 195),rgba(211, 196, 195), rgba(67, 86, 37)); */
     background: rgba(211, 196, 195);
     color: rgb(67, 87, 36);
-    box-shadow: 0 0 20px rgb(67, 87, 36);
+    box-shadow: 0 0 20px 5px rgba(67, 87, 36, 0.6);
 }
 
 .sectionTwo {
@@ -242,10 +268,6 @@ main {
 }
 
 /*  */
-
-
-
-
 
 
 /* Drinks html */
