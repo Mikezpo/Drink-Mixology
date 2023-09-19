@@ -14,6 +14,7 @@ html {
     line-height: 2;
     letter-spacing: 0.2rem;
     font-family: 'Source Sans 3', sans-serif;
+    scroll-behavior: smooth;
 }
   
 body {
@@ -77,8 +78,12 @@ nav {
     transition: all 0.8s ease-in-out;
 }
   
-.navButton:hover {
-    transform: scale(1.1);
+.navButton:hover .bar:nth-child(1) {
+    transform: translateY(-0.5rem);
+}
+  
+.navButton:hover .bar:nth-child(3) {
+    transform: translateY(0.5rem);
 }
   
 .bar {
@@ -88,7 +93,8 @@ nav {
     align-items: flex-end;
     width: 3rem;
     border: 1.2px solid rgb(40, 20, 20);
-    margin-top: 0.6rem;
+    margin-top: 0.5rem;
+    transition: all 0.8s ease-in-out;
 }
   
 #barOne,
