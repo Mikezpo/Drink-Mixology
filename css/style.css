@@ -16,31 +16,50 @@ html {
     font-family: 'Source Sans 3', sans-serif;
     scroll-behavior: smooth;
 }
+
+:root {
+    --lime-color: rgb(210, 236, 143);
+    --light-lime-color: rgb(220, 239, 171);
+    --green-color: rgb(101, 138, 46);
+    --dark-green: rgb(67, 86, 37);
+    --dark-green-shadow: rgba(67, 87, 36, 0.6);
+    --linear-light: rgba(211, 210, 195, 0.948);
+    --linear-yellow: rgba(220, 208, 146, 0.882);
+    --linear-green: rgba(100, 154, 19, 0.863);
+    --btn-background: rgb(252, 247, 225);
+    --black-font: rgb(40, 20, 20);
+    --blue-font : rgb(27, 123, 150);
+}
   
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: url('/images/cocktail.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-
     /* background: url('https://images.unsplash.com/photo-1658243253492-6c5129e969d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80'); */
     
+}
+
+body::after {
+    content: "";
+    /* background: url('/images/cocktail.jpg'); */
+    background: url('/images/lime-cocktail.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    opacity: 0.8;
 }
 
 /* FONT SIZE */
 
 h1 {
-    min-width: 20rem;
-    white-space: nowrap;
-    color: rgb(40, 20, 20);
     font-size: 2.2rem;
     font-weight: bold;
-    padding: 1.5rem 0 1rem 2rem;
-    margin: 0;
-    z-index: 5;
 }
 
 h2 {
@@ -64,6 +83,25 @@ nav {
     background-color: none;
     position: relative;
     z-index: 2;
+}
+
+h1 {
+    min-width: 20rem;
+    white-space: nowrap;
+    padding: 1.5rem 0 1rem 2rem;
+    margin: 0;
+    z-index: 5;
+}
+
+h1, h1 a {
+    text-decoration: none;
+    color: var(--black-font);
+    transition: all 0.5s ease-in-out;
+}
+
+h1:hover, h1 a:hover {
+    transform: scale(1.05);
+    color: var(--blue-font);
 }
 
 .navButton {
@@ -92,7 +130,7 @@ nav {
     justify-content: center;
     align-items: flex-end;
     width: 3rem;
-    border: 1.2px solid rgb(40, 20, 20);
+    border: 1.2px solid var(--black-font);
     margin-top: 0.5rem;
     transition: all 0.8s ease-in-out;
 }
@@ -120,7 +158,7 @@ nav {
     overflow: hidden;
     max-height: 0;  
     transition: max-height 0.3s ease-in-out, opacity 0.3s, visibility 0.2s 0.3s;
-    background: rgb(229, 210, 211);
+    background: var(--light-lime-color);
     border-bottom: 1px solid black;
     position: absolute;
     top: 0;
@@ -163,8 +201,8 @@ nav {
     font-size: 2rem;
     font-weight: 600;
     transition: all 0.5s ease-in-out;
-    border-bottom: 2px solid rgb(229, 210, 211);
-    color: rgb(67, 86, 37);
+    border-bottom: 2px solid var(--light-lime-color);
+    color: var(--black-font);
 }
   
 .navLinks.active li:hover {
@@ -172,7 +210,7 @@ nav {
 }
   
 .navLinks.active li a:hover {
-    border-bottom: 2px solid rgb(67, 86, 37);
+    border-bottom: 2px solid var(--blue-font);
 }
 
 /* Body */
@@ -180,44 +218,54 @@ nav {
 main {
     margin: 0 auto;
     max-width: 110rem;
-    height: 100vh;
+    height: 100%;
     display: flex;
 }
 
+.mainPage {
+    height: 100vh;
+}
+
 .sectionOne {
-    width: 60%;
+    width: 100%;
     max-height: 50rem;
+    margin: 0 2rem;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
 .sectionOneDiv {
-    max-width: 50rem;
-    position: relative;
-    top: 6rem;
-    left: 6rem;
+    max-width: 70rem;
+    margin: 10rem auto 0;
+    /* position: relative;
+    top: 17rem;
+    left: 6rem; */
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
     padding: 2rem 4rem;
-    color:rgb(67, 86, 37);
-    background: linear-gradient(45deg, rgba(211, 196, 195, 0.8), rgba(133, 149, 108, 0.734));
+    color:var(--dark-green);
+    background: rgba(255, 255, 255, 0.74);
+    /* background: linear-gradient(310deg, var(--linear-yellow), var(--linear-green)); */
     /* background: rgba(211, 196, 195, 0.9); */
-    border: 2px solid rgb(67, 87, 36);
+    border: 2px solid var(--green-color);
     border-radius: 10px;
-    box-shadow: 0 0 20px 5px rgba(67, 87, 36, 0.6);
+    box-shadow: 0 0 20px 5px var(--dark-green-shadow);
 }
 
 .sectionOneDiv h2 {
-    font-size: 3.2rem;
+    font-size: 4rem;
+    color: var(--green-color);
     font-family: 'Lobster Two', cursive;
-    text-align: left;
+    text-align: center;
+    padding: 4rem 0;
 }
 
 .sectionOneDiv p {
     text-align: justify;
-    color: rgb(40, 20, 20);
+    font-size: 2rem;
+    color: var(--black-font);
 }
 
 .mixBtn {
@@ -233,7 +281,7 @@ main {
     border-radius: 10px;
     /*background: linear-gradient(45deg, rgb(211, 196, 195), rgba(67, 86, 37)); */
     border: 2px solid transparent;
-    background: rgb(67, 87, 36);
+    background: var(--green-color);
     overflow: hidden;
     transition: all 0.8s ease-in-out;
 
@@ -245,7 +293,7 @@ main {
     position: absolute;
     width: 0%;
     height: 2px;
-    background: rgba(211, 196, 195);
+    background: var(--linear-yellow);
     transition: all 0.3s;
 }
 
@@ -263,9 +311,9 @@ main {
     width: 100%;
     transform: scale(1.04);
     /* background: linear-gradient(45deg, rgba(211, 196, 195),rgba(211, 196, 195), rgba(67, 86, 37)); */
-    background: rgba(211, 196, 195);
-    color: rgb(67, 87, 36);
-    box-shadow: 0 0 20px 5px rgba(67, 87, 36, 0.6);
+    background: var(--btn-background);
+    color: var(--green-color);
+    box-shadow: 0 0 20px 5px var(--dark-green-shadow);
 }
 
 .sectionTwo {
@@ -303,10 +351,40 @@ main {
     text-align: justify;
 }
 
+.drinksTypeDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 4rem 0;
+}
 
+.drinkType1, .drinkType2 {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 5px var(--dark-green-shadow);
+    transition: all 0.8s ease-in-out;
 
+    border: 1px solid red;
+}
 
+.drinkType1:hover, .drinkType2:hover {
 
+}
+
+.drinkType1 {
+    background: url('https://images.unsplash.com/photo-1569529465841-dfecdab7503b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.drinkType2 {
+    background: url('https://images.unsplash.com/photo-1575596510825-f748919a2bf7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* API fetch */
 
@@ -332,7 +410,7 @@ h3 {
     width: 60%;
     margin: 0 auto;
     padding: 3rem 0;
-    color: rgb(27, 123, 150);
+    color: var(--blue-font);
 }
 
 img{
@@ -363,9 +441,9 @@ input {
     height: 3rem;
     width: 15rem;
     text-align: center;
-    border: 1px solid rgb(27, 123, 150);
+    border: 1px solid var(--blue-font);
     border-radius: 5px 0 0 5px;
-    caret-color: rgb(27, 123, 150);
+    caret-color: var(--blue-font);
 }
   
 input:focus {
@@ -380,10 +458,10 @@ button {
     width: 15rem;
     padding: 5px;
     text-align: center;
-    border: 1px solid rgb(27, 123, 150);
+    border: 1px solid var(--blue-font);
     border-left: 0px;
     border-radius: 0 5px 5px 0;
-    color: rgb(27, 123, 150);
+    color: var(--blue-font);
     background: none;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -391,8 +469,8 @@ button {
   
 button:hover {
     color: white;
-    background-color: rgb(27, 123, 150);
-    border: 1px solid rgb(27, 123, 150);
+    background-color: var(--blue-font);
+    border: 1px solid var(--blue-font);
     box-shadow: 0 0 20px #9ecaed;
     
 }
@@ -404,24 +482,24 @@ footer {
     width: 100%;
     padding: 1rem 0;
     text-align: center;
-    background: rgb(229, 210, 211);
+    background: var(--lime-color);
 }
 
 .copyrightFooter {
-    color: rgb(40, 20, 20);
+    color: var(--black-font);
     font-size: 1.6rem;
     font-weight: 600;
     font-family: 'Lobster Two', cursive;
 }
 
 .copyrightFooter a {
-    color: rgb(40, 20, 20);
+    color: var(--black-font);
     text-decoration: none;
     transition: all 0.6s ease-in-out;
 }
 
 .copyrightFooter a:hover {
     transform: scale(1.02);
-    color: rgb(10, 106, 133);
+    color: var(--blue-font);
     font-weight: bold;
 }
