@@ -52,7 +52,7 @@ body::after {
     right: 0;
     position: fixed;
     z-index: -1;
-    opacity: 0.8;
+    filter: opacity(0.6);
 }
 
 /* FONT SIZE */
@@ -238,9 +238,6 @@ main {
 .sectionOneDiv {
     max-width: 70rem;
     margin: 10rem auto 0;
-    /* position: relative;
-    top: 17rem;
-    left: 6rem; */
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
@@ -284,7 +281,6 @@ main {
     background: var(--green-color);
     overflow: hidden;
     transition: all 0.8s ease-in-out;
-
 }
 
 .mixBtn::before, 
@@ -323,12 +319,11 @@ main {
 
 /*  */
 
-
 /* Drinks html */
 
 .mainSectionDrinks {
     width: 100%;
-    margin: 0 2rem;
+    margin: 0 2rem 6rem 2rem;
 }
 
 .drinksTextDiv {
@@ -338,7 +333,9 @@ main {
     text-align: center;
 }
 
-.drinksTextHeader {
+.drinksTextHeader, .headerTypeCocktail {
+    text-align: center;
+    color: var(--blue-font);
     font-size: 3.2rem;
     font-family: 'Lobster Two', cursive;
 }
@@ -372,7 +369,7 @@ main {
 .textHoverImage {
     display: none;
     width: 20rem;
-    color: var(--blue-font);
+    color: var(--btn-background);
     font-size: 2.5rem;
     font-weight: bold;
     position: absolute;
@@ -391,14 +388,14 @@ main {
 }
   
 .drinkType1 {
-    background: url('https://images.unsplash.com/photo-1569529465841-dfecdab7503b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80');
+    background: url('/images/alcoholic-drink.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
   
 .drinkType2 {
-    background: url('https://images.unsplash.com/photo-1575596510825-f748919a2bf7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80');
+    background: url('/images/non-alcoholic-drink.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
