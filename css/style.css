@@ -348,22 +348,38 @@ main {
     text-align: justify;
 }
 
-.drinksTypeDiv {
+.drinksTypeDiv, .mainIngredientList {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     margin: 4rem 0;
 }
+
+.mainIngredientList {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
   
-.drinkTypeContainer {
+.drinkTypeContainer, .ingredientNameContainer {
     position: relative;
-    width: 30rem;
-    height: 30rem;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 0 20px 5px var(--dark-green-shadow);
     text-align: center;
     cursor: pointer;
+}
+
+.drinkTypeContainer {
+    width: 30rem;
+    height: 30rem;
+}
+
+.ingredientNameContainer {
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    margin: 1.5rem;
 }
 
 .textHoverImage {
@@ -401,6 +417,36 @@ main {
     background-repeat: no-repeat;
 }
 
+.ingredientImage {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ingredient-1 {
+    background: url('');
+}
+
+.ingredient-2 {
+    background: url('');
+}
+
+.ingredient-3 {
+    background: url('');
+}
+
+.ingredient-4 {
+    background: url('');
+}
+
+.ingredient-5 {
+    background: url('');
+}
+
+.ingredient-6 {
+    background: url('');
+}
+
 .drinkTypeContainer:hover .textHoverImage {
     display: block;
 }
@@ -419,9 +465,12 @@ main {
   filter: brightness(100%);
 }
 
-.mainTypeDrinks {
+/*  */
+
+
+/* .mainTypeDrinks {
     display: block !important;
-}
+} */
 
 /* API fetch */
 
