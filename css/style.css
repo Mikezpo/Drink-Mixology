@@ -379,7 +379,7 @@ main {
     z-index: 0;
 }
   
-.drinkType1, .drinkType2 {
+.drinkType1, .drinkType2, .ingredientType {
     width: 100%;
     height: 100%;
     transition: transform 0.8s ease-in-out, filter 0.8s ease-in-out;
@@ -417,6 +417,10 @@ main {
 
 .drinkTypeContainer:hover {
   filter: brightness(100%);
+}
+
+.mainTypeDrinks {
+    display: block !important;
 }
 
 /* API fetch */
