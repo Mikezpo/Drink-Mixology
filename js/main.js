@@ -31,7 +31,7 @@ document.addEventListener('click', (event) => {
 // API
 
 
-fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`)
+fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
     .then(res => res.json())
     .then(data => {
         console.log(data.drinks);

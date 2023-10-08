@@ -395,12 +395,12 @@ main {
     z-index: 0;
 }
   
-.drinkType1, .drinkType2, .ingredientType {
+.drinkType1, .drinkType2, .ingredientImage {
     width: 100%;
     height: 100%;
     transition: transform 0.8s ease-in-out, filter 0.8s ease-in-out;
     transform: scale(1.2);
-    z-index: 3;
+    /* z-index: 3; */
 }
   
 .drinkType1 {
@@ -417,35 +417,11 @@ main {
     background-repeat: no-repeat;
 }
 
-.ingredientImage {
+/* .ingredientImage {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.ingredient-1 {
-    background: url('');
-}
-
-.ingredient-2 {
-    background: url('');
-}
-
-.ingredient-3 {
-    background: url('');
-}
-
-.ingredient-4 {
-    background: url('');
-}
-
-.ingredient-5 {
-    background: url('');
-}
-
-.ingredient-6 {
-    background: url('');
-}
+} */
 
 .drinkTypeContainer:hover .textHoverImage {
     display: block;
@@ -457,25 +433,76 @@ main {
   transform: scale(1.0);
 }
 
-.drinkTypeContainer:hover .textHoverImage {
-  display: block;
-}
-
-.drinkTypeContainer:hover {
+.drinkTypeContainer:hover, .ingredientNameContainer:hover {
   filter: brightness(100%);
 }
 
-/*  */
+/* Main Ingredient List */
 
+.ingredient-1 {
+    background: url('https://images.unsplash.com/photo-1601751818941-571144562ff8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2788&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-/* .mainTypeDrinks {
-    display: block !important;
-} */
+.ingredient-2 {
+    background: url('https://images.unsplash.com/photo-1610631717083-6aaf48db5b77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ingredient-3 {
+    background: url('https://images.unsplash.com/photo-1602166242292-93a00e63e8e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2788&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ingredient-4 {
+    background: url('https://images.unsplash.com/photo-1583552188783-709c90220745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2803&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ingredient-5 {
+    background: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ingredient-6 {
+    background: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ingredientNameContainer:hover .ingredient-1,
+.ingredientNameContainer:hover .ingredient-2,
+.ingredientNameContainer:hover .ingredient-3,
+.ingredientNameContainer:hover .ingredient-4,
+.ingredientNameContainer:hover .ingredient-5,
+.ingredientNameContainer:hover .ingredient-6 {
+    filter: brightness(30%);
+    transform: scale(1.0);
+}
+
+.ingredientNameContainer:hover .textHoverImage {
+    display: block;
+}
 
 /* API fetch */
 
-.sectionInput, .sectionDrink {
+.sectionInput {
+    width: 100%;
     margin: 0 auto;
+}
+
+.sectionInput {
     padding: 2rem 0;
     text-align: center;
     width: 100%;
@@ -487,10 +514,10 @@ main {
     border-radius: 16px 16px 0 0;
 }
 
-.sectionDrink {
+/* .sectionDrink {
     min-height: 67rem;
     border-radius: 0 0 16px 16px;
-}
+} */
   
 h3 {
     width: 60%;
@@ -610,3 +637,5 @@ footer {
     }
     
 }
+
+
