@@ -348,6 +348,17 @@ main {
     text-align: justify;
 }
 
+/* Hide/Show elements */
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/*  */
 .drinksTypeDiv, .mainIngredientList {
     display: flex;
     justify-content: space-around;
