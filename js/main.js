@@ -39,6 +39,20 @@ document.addEventListener("DOMContentLoaded", function() {
   // Get the alcoholic and non-alcoholic sections
   const alcoholicSection = document.querySelector(".alcoholic");
   const nonAlcoholicSection = document.querySelector(".non-alcoholic");
+
+  // Toggle visibility for alcoholic section
+  alcoholicContainer.addEventListener("click", function() {
+    if (alcoholicSection.classList.contains("hidden")) {
+      alcoholicSection.classList.remove("hidden");
+      alcoholicSection.classList.add("show");
+      
+      nonAlcoholicSection.classList.remove("show");
+      nonAlcoholicSection.classList.add("hidden");
+    } else {
+      alcoholicSection.classList.remove("show");
+      alcoholicSection.classList.add("hidden");
+    }
+  });
   
 });
 
