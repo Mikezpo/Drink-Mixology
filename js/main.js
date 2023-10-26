@@ -53,6 +53,20 @@ document.addEventListener("DOMContentLoaded", function() {
       alcoholicSection.classList.add("hidden");
     }
   });
+
+  // Toggle visibility for non-alcoholic section
+  nonAlcoholicContainer.addEventListener("click", function() {
+    if (nonAlcoholicSection.classList.contains("hidden")) {
+      nonAlcoholicSection.classList.remove("hidden");
+      nonAlcoholicSection.classList.add("show");
+      
+      alcoholicSection.classList.remove("show");
+      alcoholicSection.classList.add("hidden");
+    } else {
+      nonAlcoholicSection.classList.remove("show");
+      nonAlcoholicSection.classList.add("hidden");
+    }
+  });
   
 });
 
