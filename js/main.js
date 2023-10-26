@@ -30,6 +30,17 @@ document.addEventListener('click', (event) => {
 
 // Drinks showcase
 
+document.addEventListener("DOMContentLoaded", function() {
+
+  // Get the alcoholic and non-alcoholic containers
+  const alcoholicContainer = document.querySelector(".drinkType1Container");
+  const nonAlcoholicContainer = document.querySelector(".drinkType2Container");
+
+  // Get the alcoholic and non-alcoholic sections
+  const alcoholicSection = document.querySelector(".alcoholic");
+  const nonAlcoholicSection = document.querySelector(".non-alcoholic");
+  
+});
 
 
 // API
