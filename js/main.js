@@ -15,6 +15,7 @@ for (const item of menuItems) {
 toggleButton.addEventListener('click', (event) => {
   event.stopPropagation();
   navbarLinks.classList.toggle('active');
+  console.log('click');
 });
 
 // Close the menu when clicking outside of it
@@ -42,29 +43,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Toggle visibility for alcoholic section
   alcoholicContainer.addEventListener("click", function() {
-    if (alcoholicSection.classList.contains("hidden")) {
-      alcoholicSection.classList.remove("hidden");
+    if (alcoholicSection.classList.contains("hideBoxes")) {
+      alcoholicSection.classList.remove("hideBoxes");
       alcoholicSection.classList.add("show");
       
       nonAlcoholicSection.classList.remove("show");
-      nonAlcoholicSection.classList.add("hidden");
+      nonAlcoholicSection.classList.add("hideBoxes");
     } else {
       alcoholicSection.classList.remove("show");
-      alcoholicSection.classList.add("hidden");
+      alcoholicSection.classList.add("hideBoxes");
     }
   });
 
   // Toggle visibility for non-alcoholic section
   nonAlcoholicContainer.addEventListener("click", function() {
-    if (nonAlcoholicSection.classList.contains("hidden")) {
-      nonAlcoholicSection.classList.remove("hidden");
+    if (nonAlcoholicSection.classList.contains("hideBoxes")) {
+      nonAlcoholicSection.classList.remove("hideBoxes");
       nonAlcoholicSection.classList.add("show");
       
       alcoholicSection.classList.remove("show");
-      alcoholicSection.classList.add("hidden");
+      alcoholicSection.classList.add("hideBoxes");
     } else {
       nonAlcoholicSection.classList.remove("show");
-      nonAlcoholicSection.classList.add("hidden");
+      nonAlcoholicSection.classList.add("hideBoxes");
     }
   });
   

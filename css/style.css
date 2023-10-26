@@ -349,7 +349,7 @@ main {
 
 /* Hide/Show elements */
 
-.hidden {
+.hideBoxes {
     display: none;
 }
 
