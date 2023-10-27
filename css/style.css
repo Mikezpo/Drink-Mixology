@@ -330,6 +330,8 @@ main {
 .mainSectionDrinks {
     width: 100%;
     margin: 0 2rem 6rem 2rem;
+    padding: 0 4rem 4rem;
+    background-color: #f2f2f2bd;
 }
 
 .drinksTextDiv {
@@ -510,6 +512,31 @@ main {
 .ingredientNameContainer:hover .textHoverImage {
     display: block;
 }
+
+/* Random cocktail */
+
+.random-cocktail-section {
+    background-color: #f2f2f2bd; /* Light gray; adjust as needed */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.random-cocktail-btn {
+    background-color: var(--green-color); /* Tomato color; adjust as needed */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.random-cocktail-btn:hover {
+    background-color: #e55343; /* Darken color on hover */
+}
+
+/*  */
 
 /* API fetch */
 
