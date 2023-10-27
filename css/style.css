@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;1,700&family=Source+Sans+3:ital,wght@0,200;0,400;0,600;0,900;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,700&family=Source+Sans+3:ital,wght@0,200;0,400;0,600;0,900;1,400;1,600&display=swap');
 
 /* BOX MODEL HACK */
 * {
@@ -29,14 +29,20 @@ html {
     --btn-background: rgb(252, 247, 225);
     --black-font: rgb(40, 20, 20);
     --blue-font : rgb(27, 123, 150);
+    --source-sans: 'Source Sans 3', sans-serif;
+    --lobster-font: 'Lobster Two', cursive;
+
 }
-  
-body {
+
+body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* background: url('https://images.unsplash.com/photo-1658243253492-6c5129e969d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80'); */
-    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 body::after {
@@ -55,7 +61,7 @@ body::after {
     filter: opacity(0.6);
 }
 
-/* FONT SIZE */
+/* FONTS */
 
 h1 {
     font-size: 2.2rem;
@@ -64,10 +70,18 @@ h1 {
 
 h2 {
     font-size: 3rem;
+    color: var(--blue-font);
 }
   
 h3 {
     font-size: 2.4rem;
+}
+
+p {
+    font-size: 2rem;
+    color: var(--black-font);
+    text-align: justify;
+    font-weight: 600;
 }
 
   
@@ -215,53 +229,51 @@ h1:hover, h1 a:hover {
 /* Body */
   
 main {
+    flex: 1;
     margin: 0 auto;
     max-width: 110rem;
-    /* height: 100%; */
     display: flex;
 }
 
-.mainPage {
-    height: 100vh;
+.titleIntro {
+    margin: 5rem 0;
+    font-size: 7rem;
+    letter-spacing: 1.4rem;
+    font-weight: 700;
+    color: var(--green-color) !important;
+    font-family: var(--lobster-font);
 }
 
 .sectionOne {
     width: 100%;
-    max-height: 50rem;
+    height:100%;
     margin: 0 2rem;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .sectionOneDiv {
     max-width: 70rem;
-    margin: 10rem auto 0;
+    margin: 10rem auto 15rem;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
     padding: 2rem 4rem;
     color:var(--dark-green);
     background: rgba(255, 255, 255, 0.74);
-    /* background: linear-gradient(310deg, var(--linear-yellow), var(--linear-green)); */
-    /* background: rgba(211, 196, 195, 0.9); */
     border: 2px solid var(--green-color);
     border-radius: 10px;
     box-shadow: 0 0 20px 5px var(--dark-green-shadow);
 }
 
 .sectionOneDiv h2 {
-    font-size: 4rem;
-    color: var(--green-color);
+    font-size: 3.4rem;
+    color: var(--blue-font);
     font-family: 'Lobster Two', cursive;
     text-align: center;
     padding: 4rem 0;
-}
-
-.sectionOneDiv p {
-    text-align: justify;
-    font-size: 2rem;
-    color: var(--black-font);
 }
 
 .mixBtn {
@@ -311,11 +323,6 @@ main {
     box-shadow: 0 0 20px 5px var(--dark-green-shadow);
 }
 
-.sectionTwo {
-    width: 40%;
-    max-height: 50rem;
-}
-
 /*  */
 
 /* Drinks html */
@@ -341,7 +348,6 @@ main {
 
 .drinksText {
     font-size: 2rem;
-    font-weight: 500;
     max-width: 70rem;
     margin: 0 auto;
     text-align: justify;
