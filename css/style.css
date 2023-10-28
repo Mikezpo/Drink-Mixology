@@ -230,6 +230,7 @@ h1:hover, h1 a:hover {
   
 main {
     flex: 1;
+    flex-direction: column;
     margin: 0 auto;
     max-width: 110rem;
     display: flex;
@@ -242,6 +243,7 @@ main {
     font-weight: 700;
     color: var(--green-color) !important;
     font-family: var(--lobster-font);
+    z-index: 0 !important;
 }
 
 .sectionOne {
@@ -255,17 +257,16 @@ main {
 }
 
 .sectionOneDiv {
-    max-width: 70rem;
+    max-width: 80rem;
     margin: 10rem auto 15rem;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
     padding: 2rem 4rem;
     color:var(--dark-green);
-    background: rgba(255, 255, 255, 0.74);
-    border: 2px solid var(--green-color);
+    background: rgba(255, 255, 255, 0.869);
     border-radius: 10px;
-    box-shadow: 0 0 20px 5px var(--dark-green-shadow);
+    box-shadow: 0 0 20px 0px var(--light-lime-color);
 }
 
 .sectionOneDiv h2 {
@@ -287,7 +288,6 @@ main {
     left: 0;
     top: 4rem;
     border-radius: 10px;
-    /*background: linear-gradient(45deg, rgb(211, 196, 195), rgba(67, 86, 37)); */
     border: 2px solid transparent;
     background: var(--green-color);
     overflow: hidden;
@@ -328,10 +328,11 @@ main {
 /* Drinks html */
 
 .mainSectionDrinks {
-    width: 100%;
-    margin: 0 2rem 6rem 2rem;
+    max-width: 80rem;
+    margin: 6rem auto;
     padding: 0 4rem 4rem;
-    background-color: #f2f2f2bd;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.869);
 }
 
 .drinksTextDiv {
@@ -346,6 +347,20 @@ main {
     color: var(--blue-font);
     font-size: 3.2rem;
     font-family: 'Lobster Two', cursive;
+}
+
+.header3Cocktail {
+    text-align: center;
+    color: var(--green-color);
+    font-family: var(--lobster-font);
+    font-size: 3.2rem;
+}
+
+.smallerHeaderCocktail {
+    text-align: center;
+    color: var(--blue-font);
+    font-size: 2.4rem;
+    font-family: var(--lobster-font);
 }
 
 .drinksText {
@@ -397,7 +412,11 @@ main {
     display: flex;
     width: 20rem;
     height: 20rem;
-    margin: 1.5rem;
+    margin: 1rem;
+}
+
+.mainTypeDrinks {
+    max-width: 80rem;
 }
 
 .textHoverImage {
@@ -515,25 +534,41 @@ main {
 
 /* Random cocktail */
 
-.random-cocktail-section {
-    background-color: #f2f2f2bd; /* Light gray; adjust as needed */
-    padding: 20px;
-    border-radius: 5px;
+.randomCocktailSection {
+    background-color: rgba(255, 255, 255, 0.869);
+    border-radius: 10px;
     text-align: center;
-    margin-top: 10rem;
+    max-width: 80rem;
+    padding: 4rem 0;
+    margin: 0 auto 6rem;
 }
 
-.random-cocktail-btn {
+.randomCocktailBtn {
     background-color: var(--green-color); /* Tomato color; adjust as needed */
     color: #fff;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.random-cocktail-btn:hover {
+.randomCocktailBtn:hover {
     background-color: #e55343; /* Darken color on hover */
+}
+
+.shakeBtn {
+    width: 20rem;
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Lobster Two', cursive;
+    color: white;
+    padding: 1rem 2.5rem 4rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: var(--green-color);
+    transition: all 0.8s ease-in-out;
 }
 
 /*  */
@@ -628,7 +663,6 @@ button:hover {
     background-color: var(--blue-font);
     border: 1px solid var(--blue-font);
     box-shadow: 0 0 20px #9ecaed;
-    
 }
 
 /* Footer */
