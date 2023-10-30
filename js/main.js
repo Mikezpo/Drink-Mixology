@@ -92,6 +92,8 @@ document.querySelector('input').addEventListener('keypress', function(event) {
   }
 });
 
+// Get random Cocktail
+
 function getRandom() {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
     .then(res => res.json())
@@ -102,6 +104,73 @@ function getRandom() {
         console.log(`Error ${err}`)
     })
 }
+
+// Get Cocktail by specific ingredient
+
+// Gin
+
+document.querySelector('.ingredient-1').addEventListener('click', getGin)
+
+function getGin() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.drinks);
+  })
+  .catch(err => {
+    console.log(`Error ${err}`)
+  })
+}
+
+// Vodka
+
+document.querySelector('.ingredient-2').addEventListener('click', getVodka)
+
+function getVodka() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.drinks);
+  })
+  .catch(err => {
+    console.log(`Error ${err}`)
+  })
+}
+
+// Whiskey
+
+document.querySelector('.ingredient-3').addEventListener('click', getWhiskey)
+
+function getVodka() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.drinks);
+  })
+  .catch(err => {
+    console.log(`Error ${err}`)
+  })
+}
+
+// Rum
+
+document.querySelector('.ingredient-3').addEventListener('click', getRum)
+
+function getRum() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.drinks);
+  })
+  .catch(err => {
+    console.log(`Error ${err}`)
+  })
+}
+
+// https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Brandy
+// https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila
+
+// Get Cocktail by user input
 
 function getDrink() {
   let drink = document.querySelector('input').value

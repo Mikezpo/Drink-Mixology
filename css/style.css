@@ -249,7 +249,7 @@ main {
 .sectionOne {
     width: 100%;
     height:100%;
-    margin: 0 2rem;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -258,7 +258,7 @@ main {
 
 .sectionOneDiv {
     max-width: 80rem;
-    margin: 10rem auto 15rem;
+    margin: 10rem 0 15rem;
     text-align: center;
     font-size: 1.8rem;
     font-weight: 600;
@@ -331,8 +331,9 @@ main {
     max-width: 80rem;
     margin: 6rem auto;
     padding: 0 4rem 4rem;
+    background: rgba(255, 255, 255, 0.869);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.869);
+    box-shadow: 0 0 20px 0px var(--light-lime-color);
 }
 
 .drinksTextDiv {
