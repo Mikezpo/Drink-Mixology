@@ -38,11 +38,15 @@ document.addEventListener("DOMContentLoaded", function() {
   const nonAlcoholicContainer = document.querySelector(".drinkType2Container");
   const apiFetchContainer = document.querySelector('.ingredientNameContainer')
 
+  const randomCocktailFetch = document.querySelector('.shakeBtn');
+
 
   // Get the alcoholic and non-alcoholic sections
   const alcoholicSection = document.querySelector(".alcoholic");
   const nonAlcoholicSection = document.querySelector(".non-alcoholic");
   const apiFetchSection = document.querySelector('.cocktailFetchInfo');
+
+  const randomCocktailFetchDisplay = document.querySelector('.randomCocktailDiv');
 
   // Toggle visibility for alcoholic section
   alcoholicContainer.addEventListener("click", function() {
@@ -84,6 +88,15 @@ document.addEventListener("DOMContentLoaded", function() {
       apiFetchSection.classList.remove('hideBoxes');
       apiFetchSection.classList.remove('hideBoxes');
       apiFetchSection.classList.add('show');
+    }
+  })
+
+  // Make Random Cocktail API Info visible
+  randomCocktailFetch.addEventListener('click', function() {
+    if (randomCocktailFetchDisplay.classList.contains('hideBoxes')) {
+      randomCocktailFetchDisplay.classList.remove('hideBoxes');
+      randomCocktailFetchDisplay.classList.remove('hideBoxes');
+      randomCocktailFetchDisplay.classList.add('show');
     }
   })
   
