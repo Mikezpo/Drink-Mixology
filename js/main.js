@@ -127,6 +127,7 @@ function getDrinksByIngredient(ingredient) {
       
       document.querySelector('.cocktailname').innerText = randomDrink.strDrink;
       document.querySelector('.cocktailImage').src = randomDrink.strDrinkThumb;
+      document.querySelector('.cocktailGlass').innerText = randomDrink.strGlass;
       document.querySelector('.cocktailDescription').innerText = randomDrink.strInstructions;
     } else {
       document.querySelector('.cocktailname').innerText = "No drinks found";
@@ -163,11 +164,19 @@ function getRandom() {
           
           document.querySelector('.randomCocktailName').innerText = randomDrink.strDrink;
           document.querySelector('.randomCocktailImage').src = randomDrink.strDrinkThumb;
-          document.querySelector('.RandomCocktailDescription').innerText = randomDrink.strInstructions;
+          document.querySelector('.randomCocktailType').innerText = randomDrink.strAlcoholic;
+          document.querySelector('.cocktailGlassRandom').innerText = randomDrink.strGlass;
+          document.querySelector('.randomCocktailInstructions').innerText = randomDrink.strInstructions;
+          
+          
+          
         } else {
           document.querySelector('.randomCocktailName').innerText = "No drinks found";
           document.querySelector('.randomCocktailImage').src = "";
-          document.querySelector('.RandomCocktailDescription').innerText = "";
+          document.querySelector('.cocktailType').innerText = "";
+          document.querySelector('.cocktailGlassRandom').innerText = "";
+          document.querySelector('.randomCocktailInstructions').innerText = "";
+          
         }
     })
     .catch(err => {
