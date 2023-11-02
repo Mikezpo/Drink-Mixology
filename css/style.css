@@ -561,6 +561,7 @@ main {
 .cocktailImage, .randomCocktailImage {
     width: 25rem;
     height: 25rem;
+    transition: all 0.5s ease-in-out;
 }
 
 .cocktailGlass, .cocktailGlassRandom, .randomCocktailType {
@@ -573,6 +574,14 @@ main {
     font-size: 2.2rem;
     font-weight: 600;
     letter-spacing: 0.2rem;
+    color: var(--black-font);
+}
+
+.cocktailFetchInfo ul {
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0;
     color: var(--black-font);
 }
 
