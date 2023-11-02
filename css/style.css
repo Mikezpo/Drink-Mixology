@@ -334,7 +334,7 @@ main {
 
 .mainSectionDrinks {
     max-width: 80rem;
-    margin: 6rem auto;
+    margin: 6rem 0;
     padding: 0 4rem 4rem;
     background: rgba(255, 255, 255, 0.869);
     border-radius: 10px;
@@ -353,6 +353,13 @@ main {
     color: var(--blue-font);
     font-size: 3.2rem;
     font-family: 'Lobster Two', cursive;
+}
+
+.randomApiSection {
+    max-width: 80rem;
+    /* padding: 0 4rem; */
+    text-align: center;
+    box-shadow: 0 0 20px 0px var(--light-lime-color);
 }
 
 .header3Cocktail {
@@ -443,7 +450,6 @@ main {
     height: 100%;
     transition: transform 0.8s ease-in-out, filter 0.8s ease-in-out;
     transform: scale(1.2);
-    /* z-index: 3; */
 }
   
 .drinkType1 {
@@ -459,12 +465,6 @@ main {
     background-position: center;
     background-repeat: no-repeat;
 }
-
-/* .ingredientImage {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
 
 .drinkTypeContainer:hover .textHoverImage {
     display: block;
@@ -538,6 +538,45 @@ main {
     display: block;
 }
 
+/* Main ingredients API Fetch */
+
+.cocktailFetchInfo, .randomCocktailSection, .randomCocktailDiv {
+    padding: 0 4rem;
+    text-align: center !important;
+}
+
+.cocktailFetchInfo h4, .cocktailFetchInfo p, .randomCocktailSection h4, .randomCocktailSection p {
+    font-size: 2.2rem;
+    color: var(--blue-font);
+    font-weight: 700;
+    
+}
+
+.cocktailName, .randomCocktailName {
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    padding: 4rem 0 2rem;
+}
+
+.cocktailImage, .randomCocktailImage {
+    width: 25rem;
+    height: 25rem;
+}
+
+.cocktailGlass, .cocktailGlassRandom, .randomCocktailType {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--black-font);
+}
+
+.cocktailDescription, .randomCocktailInstructions {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: var(--black-font);
+}
+
+
 /* Random cocktail */
 
 .randomCocktailSection {
@@ -545,7 +584,7 @@ main {
     border-radius: 10px;
     text-align: center;
     max-width: 80rem;
-    padding: 4rem 0;
+    padding: 4rem 4rem;
     margin: 0 auto 6rem;
 }
 

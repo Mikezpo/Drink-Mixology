@@ -125,12 +125,12 @@ function getDrinksByIngredient(ingredient) {
       const randomIndex = Math.floor(Math.random() * drinksCount);
       const randomDrink = data.drinks[randomIndex];
       
-      document.querySelector('.cocktailname').innerText = randomDrink.strDrink;
+      document.querySelector('.cocktailName').innerText = randomDrink.strDrink;
       document.querySelector('.cocktailImage').src = randomDrink.strDrinkThumb;
-      document.querySelector('.cocktailGlass').innerText = `Glass: ` + randomDrink.strGlass;
-      document.querySelector('.cocktailDescription').innerText = `Instructions: ` + randomDrink.strInstructions;
+      document.querySelector('.cocktailGlass').innerText = randomDrink.strGlass;
+      document.querySelector('.cocktailDescription').innerText = randomDrink.strInstructions;
     } else {
-      document.querySelector('.cocktailname').innerText = "No drinks found";
+      document.querySelector('.cocktailName').innerText = "No drinks found";
       document.querySelector('.cocktailImage').src = "";
       document.querySelector('.cocktailDescription').innerText = "";
     }
@@ -164,9 +164,9 @@ function getRandom() {
           
           document.querySelector('.randomCocktailName').innerText = randomDrink.strDrink;
           document.querySelector('.randomCocktailImage').src = randomDrink.strDrinkThumb;
-          document.querySelector('.randomCocktailType').innerText = `Cocktail Type: ` + randomDrink.strAlcoholic;
-          document.querySelector('.cocktailGlassRandom').innerText = `Glass: ` + randomDrink.strGlass;
-          document.querySelector('.randomCocktailInstructions').innerText = `Instructions: ` + randomDrink.strInstructions;
+          document.querySelector('.randomCocktailType').innerText = randomDrink.strAlcoholic;
+          document.querySelector('.cocktailGlassRandom').innerText = randomDrink.strGlass;
+          document.querySelector('.randomCocktailInstructions').innerText = randomDrink.strInstructions;
           
           
           

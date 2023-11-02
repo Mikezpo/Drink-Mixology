@@ -64,32 +64,32 @@
   
             <div class="ingredientNameContainer ingredientName-1Container">
               <div class="ingredient-1 ingredientImage" data-ingredient="Gin"></div>
-              <span class="textHoverImage">Gin</span>
+              <span class="textHoverImage" data-ingredient="Gin">Gin</span>
             </div>
   
             <div class="ingredientNameContainer ingredientName-1Container">
               <div class="ingredient-2 ingredientImage" data-ingredient="Vodka"></div>
-              <span class="textHoverImage">Vodka</span>
+              <span class="textHoverImage" data-ingredient="Vodka">Vodka</span>
             </div>
   
             <div class="ingredientNameContainer ingredientName-1Container">
               <div class="ingredient-3 ingredientImage" data-ingredient="Whiskey"></div>
-              <span class="textHoverImage">Whiskey</span>
+              <span class="textHoverImage" data-ingredient="Whiskey">Whiskey</span>
             </div>
   
             <div class="ingredientNameContainer ingredientName-1Container">
               <div class="ingredient-4 ingredientImage" data-ingredient="Rum"></div>
-              <span class="textHoverImage">Rum</span>
+              <span class="textHoverImage" data-ingredient="Rum">Rum</span>
             </div>
   
             <div class="ingredientNameContainer ingredientName-1Container">
               <div class="ingredient-5 ingredientImage" data-ingredient="Brandy"></div>
-              <span class="textHoverImage">Brandy</span>
+              <span class="textHoverImage" data-ingredient="Brandy">Brandy</span>
             </div>
   
             <div class="ingredientNameContainer ingredientName-1Container">
               <div class="ingredient-6 ingredientImage" data-ingredient="Tequila"></div>
-              <span class="textHoverImage">Tequila</span>
+              <span class="textHoverImage" data-ingredient="Tequila">Tequila</span>
             </div>
   
   
@@ -102,22 +102,25 @@
 
         </section>
 
+        <!-- Main Ingredients API Fetch -->
+
         <section class="cocktailFetchInfo hideBoxes">
           <div>
-            <h2 class="cocktailname"></h2>
-            <img src="" alt="" class="cocktailImage">
-            <h4 class="cocktailGlass"></h4>
-            <p class="cocktailDescription"></p>
 
+            <h2 class="cocktailName"></h2>
+            <img src="" alt="" class="cocktailImage">
+            <h4>Glass: <span class="cocktailGlass"></span></h4>
+            <p>Instructions: <span class="cocktailDescription"></span></p>
 
           </div>
         </section>
 
       </section>
 
-      <section>
-        <h3 class="header3Cocktail">Feeling Adventurous?</h3>
+      <section class="randomApiSection">
+        
         <div class="randomCocktailSection">
+          <h3 class="header3Cocktail">Feeling Adventurous?</h3>
           <h4 class="smallerHeaderCocktail">Let us surprise you with a random cocktail!</h4>
           <div class="randomCocktailInput">
               <button class="shakeBtn">
@@ -129,9 +132,9 @@
         <div class="randomCocktailDiv hideBoxes">
             <h2 class="randomCocktailName"></h2>
             <img src="" alt="" class="randomCocktailImage">
-            <h4 class="randomCocktailType"></h4>
-            <h4 class="cocktailGlassRandom"></h4>
-            <p class="randomCocktailInstructions"></p>
+            <h4>Cocktail Type: <span class="randomCocktailType"></span></h4>
+            <h4>Glass: <span class="cocktailGlassRandom"></span></h4>
+            <p>Instructions: <span class="randomCocktailInstructions"></span></p>
 
 
           </div>
