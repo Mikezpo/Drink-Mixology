@@ -244,6 +244,11 @@ main {
     color: var(--green-color) !important;
     font-family: var(--lobster-font);
     z-index: 0 !important;
+    transition: none;
+}
+
+.titleIntro:hover {
+    transform: none;
 }
 
 .sectionOne {
