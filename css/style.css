@@ -540,44 +540,45 @@ main {
 
 /* Main ingredients API Fetch */
 
-.cocktailFetchInfo, .randomCocktailSection, .randomCocktailDiv {
+.cocktailFetchInfo, .randomCocktailSection, .randomCocktailDiv, .nonAlcFetchInfo {
     padding: 0 4rem;
     text-align: center !important;
 }
 
-.cocktailFetchInfo h4, .cocktailFetchInfo p, .randomCocktailSection h4, .randomCocktailSection p {
+.cocktailFetchInfo h4, .cocktailFetchInfo p, .randomCocktailSection h4, .randomCocktailSection p, .nonAlcFetchInfo h4, .nonAlcFetchInfo p {
     font-size: 2.2rem;
     color: var(--blue-font);
     font-weight: 700;
+    text-align: center !important;
     
 }
 
-.cocktailName, .randomCocktailName {
+.cocktailName, .randomCocktailName, .nonAlcCocktailName {
     font-size: 3rem;
     letter-spacing: 0.2rem;
     padding: 4rem 0 2rem;
 }
 
-.cocktailImage, .randomCocktailImage {
+.cocktailImage, .randomCocktailImage, .nonAlcCocktailImage {
     width: 25rem;
     height: 25rem;
     transition: all 0.5s ease-in-out;
 }
 
-.cocktailGlass, .cocktailGlassRandom, .randomCocktailType {
+.cocktailGlass, .cocktailGlassRandom, .randomCocktailType, .nonAlcCocktailGlass {
     font-size: 2.2rem;
     font-weight: 600;
     color: var(--black-font);
 }
 
-.cocktailDescription, .randomCocktailInstructions {
+.cocktailDescription, .randomCocktailInstructions, .nonAlcCocktailDescription {
     font-size: 2.2rem;
     font-weight: 600;
     letter-spacing: 0.2rem;
     color: var(--black-font);
 }
 
-.cocktailFetchInfo ul {
+.cocktailFetchInfo ul, .randomCocktailDiv ul, .nonAlcFetchInfo ul {
     list-style: none;
     font-size: 2rem;
     font-weight: 600;

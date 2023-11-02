@@ -28,7 +28,6 @@ document.addEventListener('click', (event) => {
   }
 });
 
-
 ////////////// Drinks showcase
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -163,7 +162,7 @@ function displayIngredientsAndMeasurements(drink) {
   const ingredientsList = document.querySelector('.cocktailIngredients');
   ingredientsList.innerHTML = ''; // Clear existing ingredients
 
-  for (let i = 1; i <= 15; i++) { // Maximum amount of ingredients per cocktail
+  for (let i = 1; i <= 15; i++) { // TheCocktailDB has up to 15 ingredients
     const ingredient = drink[`strIngredient${i}`];
     const measure = drink[`strMeasure${i}`];
     if (ingredient) {
@@ -187,66 +186,63 @@ function updateUIForNoDrinks() {
 
 //////////////////////// Fetch API for Random Cocktail
 
-document.querySelector('.shakeBtn').addEventListener('click', getRandom)
-
-// document.querySelector('.shakeBtn').addEventListener('keypress', function(event) {
-//   if (event.key === 'Enter') {
-//     getRandom();
-//   }
-// });
-
-// Get random Cocktail
+document.querySelector('.shakeBtn').addEventListener('click', getRandom);
 
 function getRandom() {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
     .then(res => res.json())
     .then(data => {
-        console.log(data.drinks);
         const drinksCount = data.drinks.length;
         if (drinksCount > 0) {
-          const randomIndex = Math.floor(Math.random() * drinksCount);
-          const randomDrink = data.drinks[randomIndex];
-          
+          const randomDrink = data.drinks[0];
+
           document.querySelector('.randomCocktailName').innerText = randomDrink.strDrink;
           document.querySelector('.randomCocktailImage').src = randomDrink.strDrinkThumb;
           document.querySelector('.randomCocktailType').innerText = randomDrink.strAlcoholic;
           document.querySelector('.cocktailGlassRandom').innerText = randomDrink.strGlass;
           document.querySelector('.randomCocktailInstructions').innerText = randomDrink.strInstructions;
-          
-          
+
+          randomIngredientsAndMeasurements(randomDrink, '.randomCocktailIngredients');
           
         } else {
-          document.querySelector('.randomCocktailName').innerText = "No drinks found";
-          document.querySelector('.randomCocktailImage').src = "";
-          document.querySelector('.cocktailType').innerText = "";
-          document.querySelector('.cocktailGlassRandom').innerText = "";
-          document.querySelector('.randomCocktailInstructions').innerText = "";
-          
+          updateRandomCocktailUIForNoDrinks();
         }
     })
     .catch(err => {
-        console.log(`Error ${err}`)
-    })
+        console.error(`Error: ${err}`);
+    });
 }
 
 
+// Fetch API info on ingredients and measurements
 
-///////////////////////// API RANDOM TEST
+function randomIngredientsAndMeasurements(drink, ingredientsContainerSelector) {
+  const randomIngredientsList = document.querySelector(ingredientsContainerSelector);
+  randomIngredientsList.innerHTML = ''; // Clear existing ingredients
+
+  for (let i = 1; i <= 15; i++) { // TheCocktailDB has up to 15 ingredients
+    const randomIngredient = drink[`strIngredient${i}`];
+    const randomMeasure = drink[`strMeasure${i}`];
+    if (randomIngredient) {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${randomMeasure ? randomMeasure : ''} ${randomIngredient}`;
+      randomIngredientsList.appendChild(listItem);
+    }
+  }
+}
+
+// If no info is available
+
+function updateRandomCocktailUIForNoDrinks() {
+  document.querySelector('.randomCocktailName').innerText = "No drinks found";
+  document.querySelector('.randomCocktailImage').src = "";
+  document.querySelector('.randomCocktailType').innerText = "";
+  document.querySelector('.cocktailGlassRandom').innerText = "";
+  document.querySelector('.randomCocktailInstructions').innerText = "";
+  document.querySelector('.randomCocktailIngredients').innerHTML = '';
+}
 
 
-// fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php?i=Gin`)
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data.drinks[0]);
-//       })
-//     .catch(err => {
-//         console.log(`Error ${err}`)
-//     })
-
-/////////////////////////
-
-// https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Brandy
-// https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Tequila
 
 ///////////// Get Cocktail by user input
 
@@ -310,3 +306,60 @@ function getDrink() {
 // https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list
 // https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list
 // https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list
+
+
+
+///////////////////// Fetch API for random Non ALcoholic Cocktail
+
+document.querySelector('.drinkType2').addEventListener('click', getRandomNonAlcoholicDrink);
+
+function getRandomNonAlcoholicDrink() {
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Non_Alcoholic`)
+    .then(res => res.json())
+    .then(data => {
+        if (data.drinks.length > 0) {
+          const nonAlcDrink = data.drinks[0];
+
+          // Unhide the box to display the drink
+          document.querySelector('.nonAlcFetchInfo').classList.remove('hideBoxes');
+
+          document.querySelector('.nonAlcCocktailName').innerText = nonAlcDrink.strDrink;
+          document.querySelector('.nonAlcCocktailImage').src = nonAlcDrink.strDrinkThumb;
+          document.querySelector('.nonAlcCocktailGlass').innerText = nonAlcDrink.strGlass;
+          document.querySelector('.nonAlcCocktailDescription').innerText = nonAlcDrink.strInstructions;
+
+          nonAlcIngredientsAndMeasurements(nonAlcDrink); // Fixed variable name
+          
+        } else {
+          updateForNonAlcDrinks();
+        }
+    })
+    .catch(err => {
+        console.error(`Error: ${err}`);
+    });
+}
+
+function nonAlcIngredientsAndMeasurements(nonAlcDrink) {
+  const nonAlcIngredients = document.querySelector('.nonAlcCocktailIngredients');
+  nonAlcIngredients.innerHTML = '';
+
+  for (let i = 1; i <= 15; i++) {
+    const nonAlcIngr = nonAlcDrink[`strIngredient${i}`];
+    const nonAlcMeas = nonAlcDrink[`strMeasure${i}`]; // Fixed typo
+    if(nonAlcIngr) {
+      const listNonAlc = document.createElement('li');
+      listNonAlc.textContent = `${nonAlcMeas ? nonAlcMeas : ''} ${nonAlcIngr}`;
+      nonAlcIngredients.appendChild(listNonAlc);
+    }
+  }
+}
+
+function updateForNonAlcDrinks() {
+  // Fixed to update non-alcoholic elements
+  document.querySelector('.nonAlcCocktailName').innerText = 'No drinks found';
+  document.querySelector('.nonAlcCocktailImage').src = '';
+  document.querySelector('.nonAlcCocktailGlass').innerText = '';
+  document.querySelector('.nonAlcCocktailDescription').innerText = '';
+  document.querySelector('.nonAlcCocktailIngredients').innerHTML = '';
+}
+
