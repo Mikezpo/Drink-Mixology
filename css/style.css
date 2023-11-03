@@ -376,7 +376,7 @@ main {
     font-family: var(--lobster-font);
 }
 
-.drinksText {
+.drinksText, .alcoholicHeaderIntro, .nonAlcHeaderIntro {
     font-size: 2rem;
     max-width: 70rem;
     margin: 0 auto;

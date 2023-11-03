@@ -53,9 +53,11 @@ document.addEventListener("DOMContentLoaded", function() {
       alcoholicSection.classList.remove("hideBoxes");
       alcoholicSection.classList.add("show");
       
-      // Toggle visibility for non-alcoholic section
+      // Hide non-alcoholic and API info sections
       nonAlcoholicSection.classList.remove("show");
       nonAlcoholicSection.classList.add("hideBoxes");
+      apiFetchSection.classList.remove("show");
+      apiFetchSection.classList.add("hideBoxes");
     } else {
       alcoholicSection.classList.remove("show");
       alcoholicSection.classList.add("hideBoxes");
@@ -68,18 +70,16 @@ document.addEventListener("DOMContentLoaded", function() {
       nonAlcoholicSection.classList.remove("hideBoxes");
       nonAlcoholicSection.classList.add("show");
       
-      // Toggle visibility for alcoholic section
+      // Hide alcoholic and API info sections
       alcoholicSection.classList.remove("show");
       alcoholicSection.classList.add("hideBoxes");
-
-      // Toggle visibility for API Cocktail info
-      apiFetchSection.classList.remove('show');
-      apiFetchSection.classList.add('hideBoxes');
+      apiFetchSection.classList.remove("show");
+      apiFetchSection.classList.add("hideBoxes");
     } else {
       nonAlcoholicSection.classList.remove("show");
       nonAlcoholicSection.classList.add("hideBoxes");
     }
-  });
+});
 
   // Make API cocktail Info visible
   apiFetchContainer.addEventListener('click', function(){
@@ -311,55 +311,63 @@ function getDrink() {
 
 ///////////////////// Fetch API for random Non ALcoholic Cocktail
 
-document.querySelector('.drinkType2').addEventListener('click', getRandomNonAlcoholicDrink);
+// document.querySelector('.drinkType2').addEventListener('click', function() {
+//   Make sure to hide the alcoholic drinks and random cocktail sections
+//   alcoholicSection.classList.remove("show");
+//   alcoholicSection.classList.add("hideBoxes");
+//   randomCocktailFetchDisplay.classList.remove("show");
+//   randomCocktailFetchDisplay.classList.add("hideBoxes");
+  
+//   getRandomNonAlcoholicDrink();
+// });
 
-function getRandomNonAlcoholicDrink() {
-  fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Non_Alcoholic`)
-    .then(res => res.json())
-    .then(data => {
-        if (data.drinks.length > 0) {
-          const nonAlcDrink = data.drinks[0];
+// function getRandomNonAlcoholicDrink() {
+//   fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Non_Alcoholic`)
+//     .then(res => res.json())
+//     .then(data => {
+//         if (data.drinks.length > 0) {
+//           const nonAlcDrink = data.drinks[0];
 
-          // Unhide the box to display the drink
-          document.querySelector('.nonAlcFetchInfo').classList.remove('hideBoxes');
+//           // Unhide the box to display the drink
+//           document.querySelector('.nonAlcFetchInfo').classList.remove('hideBoxes');
 
-          document.querySelector('.nonAlcCocktailName').innerText = nonAlcDrink.strDrink;
-          document.querySelector('.nonAlcCocktailImage').src = nonAlcDrink.strDrinkThumb;
-          document.querySelector('.nonAlcCocktailGlass').innerText = nonAlcDrink.strGlass;
-          document.querySelector('.nonAlcCocktailDescription').innerText = nonAlcDrink.strInstructions;
+//           document.querySelector('.nonAlcCocktailName').innerText = nonAlcDrink.strDrink;
+//           document.querySelector('.nonAlcCocktailImage').src = nonAlcDrink.strDrinkThumb;
+//           document.querySelector('.nonAlcCocktailGlass').innerText = nonAlcDrink.strGlass;
+//           document.querySelector('.nonAlcCocktailDescription').innerText = nonAlcDrink.strInstructions;
 
-          nonAlcIngredientsAndMeasurements(nonAlcDrink); // Fixed variable name
+//           nonAlcIngredientsAndMeasurements(nonAlcDrink); // Fixed variable name
           
-        } else {
-          updateForNonAlcDrinks();
-        }
-    })
-    .catch(err => {
-        console.error(`Error: ${err}`);
-    });
-}
+//         } else {
+//           updateForNonAlcDrinks();
+//         }
+//     })
+//     .catch(err => {
+//         console.error(`Error: ${err}`);
+//     });
+// }
 
-function nonAlcIngredientsAndMeasurements(nonAlcDrink) {
-  const nonAlcIngredients = document.querySelector('.nonAlcCocktailIngredients');
-  nonAlcIngredients.innerHTML = '';
+// function nonAlcIngredientsAndMeasurements(nonAlcDrink) {
+//   const nonAlcIngredients = document.querySelector('.nonAlcCocktailIngredients');
+//   nonAlcIngredients.innerHTML = '';
 
-  for (let i = 1; i <= 15; i++) {
-    const nonAlcIngr = nonAlcDrink[`strIngredient${i}`];
-    const nonAlcMeas = nonAlcDrink[`strMeasure${i}`]; // Fixed typo
-    if(nonAlcIngr) {
-      const listNonAlc = document.createElement('li');
-      listNonAlc.textContent = `${nonAlcMeas ? nonAlcMeas : ''} ${nonAlcIngr}`;
-      nonAlcIngredients.appendChild(listNonAlc);
-    }
-  }
-}
+//   for (let i = 1; i <= 15; i++) {
+//     const nonAlcIngr = nonAlcDrink[`strIngredient${i}`];
+//     const nonAlcMeas = nonAlcDrink[`strMeasure${i}`]; // Fixed typo
+//     if(nonAlcIngr) {
+//       const listNonAlc = document.createElement('li');
+//       listNonAlc.textContent = `${nonAlcMeas ? nonAlcMeas : ''} ${nonAlcIngr}`;
+//       nonAlcIngredients.appendChild(listNonAlc);
+//     }
+//   }
+// }
 
-function updateForNonAlcDrinks() {
-  // Fixed to update non-alcoholic elements
-  document.querySelector('.nonAlcCocktailName').innerText = 'No drinks found';
-  document.querySelector('.nonAlcCocktailImage').src = '';
-  document.querySelector('.nonAlcCocktailGlass').innerText = '';
-  document.querySelector('.nonAlcCocktailDescription').innerText = '';
-  document.querySelector('.nonAlcCocktailIngredients').innerHTML = '';
-}
+// function updateForNonAlcDrinks() {
+//   // Fixed to update non-alcoholic elements
+//   document.querySelector('.nonAlcCocktailName').innerText = 'No drinks found';
+//   document.querySelector('.nonAlcCocktailImage').src = '';
+//   document.querySelector('.nonAlcCocktailGlass').innerText = '';
+//   document.querySelector('.nonAlcCocktailDescription').innerText = '';
+//   document.querySelector('.nonAlcCocktailIngredients').innerHTML = '';
+// }
 
