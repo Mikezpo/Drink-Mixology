@@ -203,15 +203,35 @@ document.querySelector('.nonAlcoholicList').addEventListener('click', function(e
 
 // Fetch a random non-alcoholic drink
 function getRandomNonAlcoholicDrink() {
-  fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php?a=Non_Alcoholic')
+  fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic')
   .then(res => res.json())
   .then(data => {
     console.log(data.drinks);
-    const drink = data.drinks[0];
-    displayNonAlcoholicDrinkInfo(drink);
+    if (data.drinks && data.drinks.length > 0) {
+      // Randomly select a non-alcoholic drink from the list
+      const randomIndex = Math.floor(Math.random() * data.drinks.length);
+      const drink = data.drinks[randomIndex];
+      // Fetch the details for the selected drink
+      fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
+      .then(res => res.json())
+      .then(details => {
+        if (details.drinks && details.drinks.length > 0) {
+          displayNonAlcoholicDrinkInfo(details.drinks[0]);
+        } else {
+          updateUIForNoNonAlcoholicDrinks();
+        }
+      })
+      .catch(err => {
+        console.error(`Error: ${err}`);
+        updateUIForNoNonAlcoholicDrinks();
+      });
+    } else {
+      updateUIForNoNonAlcoholicDrinks();
+    }
   })
   .catch(err => {
     console.error(`Error: ${err}`);
+    updateUIForNoNonAlcoholicDrinks();
   });
 }
 
@@ -243,6 +263,15 @@ function displayNonAlcoholicDrinkInfo(drink) {
   }
 }
 
+// If no non-alcoholic drink info is available
+function updateUIForNoNonAlcoholicDrinks() {
+  document.querySelector('.nonAlcCocktailName').innerText = 'No drinks found';
+  document.querySelector('.nonAlcCocktailImage').src = '';
+  document.querySelector('.nonAlcCocktailGlass').innerText = '';
+  document.querySelector('.nonAlcCocktailDescription').innerText = '';
+  document.querySelector('.nonAlcCocktailIngredients').innerHTML = '';
+}
+
 
 //////////////////////// Fetch API for Random Cocktail
 
@@ -252,6 +281,7 @@ function getRandom() {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/random.php`)
     .then(res => res.json())
     .then(data => {
+      console.log(data.drinks);
         const drinksCount = data.drinks.length;
         if (drinksCount > 0) {
           const randomDrink = data.drinks[0];
@@ -350,6 +380,7 @@ function getDrink() {
   fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
   .then(res => res.json())
   .then(data => {
+    console.log(data.drinks);
     const drinksCount = data.drinks.length;
     if (drinksCount > 0) {
       const randomIndex = Math.floor(Math.random() * drinksCount);
