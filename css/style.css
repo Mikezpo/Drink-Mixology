@@ -394,7 +394,7 @@ main {
 }
 
 /*  */
-.drinksTypeDiv, .mainIngredientList {
+.drinksTypeDiv, .mainIngredientList, .nonAlcoholicList {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -524,44 +524,26 @@ main {
     background-repeat: no-repeat;
 }
 
+.ingredient-7 {
+    background: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=2757&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .ingredientNameContainer:hover .ingredient-1,
 .ingredientNameContainer:hover .ingredient-2,
 .ingredientNameContainer:hover .ingredient-3,
 .ingredientNameContainer:hover .ingredient-4,
 .ingredientNameContainer:hover .ingredient-5,
 .ingredientNameContainer:hover .ingredient-6,
-.ingredientNameContainer:hover .ingredient-7,
-.ingredientNameContainer:hover .ingredient-8,
-.ingredientNameContainer:hover .ingredient-9 {
+.ingredientNameContainer:hover .ingredient-7 {
     filter: brightness(30%);
     transform: scale(1.0);
 }
 
 .ingredientNameContainer:hover .textHoverImage {
     display: block;
-}
-
-/* Non Alcoholic Ingredients */
-
-.ingredient-7 {
-    background: url('https://plus.unsplash.com/premium_photo-1677607237294-b041e4b57391?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.ingredient-8 {
-    background: url('https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.ingredient-9 {
-    background: url('https://images.unsplash.com/photo-1630140917603-b833c123e443?auto=format&fit=crop&q=80&w=2787&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 /* Main ingredients API Fetch */
