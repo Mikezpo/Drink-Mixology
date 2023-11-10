@@ -269,7 +269,7 @@ main {
     font-weight: 600;
     padding: 2rem 4rem;
     color:var(--dark-green);
-    background: rgba(255, 255, 255, 0.869);
+    background: rgba(255, 255, 255, 0.910);
     border-radius: 10px;
     box-shadow: 0 0 20px 0px var(--light-lime-color);
 }
@@ -336,7 +336,7 @@ main {
     max-width: 80rem;
     margin: 6rem 0;
     padding: 0 4rem 4rem;
-    background: rgba(255, 255, 255, 0.869);
+    background: rgba(255, 255, 255, 0.910);
     border-radius: 10px;
     box-shadow: 0 0 20px 0px var(--light-lime-color);
 }
@@ -600,7 +600,7 @@ main {
 /* Random cocktail */
 
 .randomCocktailSection {
-    background-color: rgba(255, 255, 255, 0.869);
+    background-color: rgba(255, 255, 255, 0.910);
     border-radius: 10px;
     text-align: center;
     max-width: 80rem;
@@ -634,6 +634,10 @@ main {
     border: 2px solid transparent;
     background: var(--green-color);
     transition: all 0.8s ease-in-out;
+}
+
+.shakeBtn:hover {
+    border: 2px solid var(--blue-font);
 }
 
 /*  */
