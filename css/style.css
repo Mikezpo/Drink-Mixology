@@ -332,9 +332,9 @@ main {
 
 /* Drinks html */
 
-.mainSectionDrinks {
+.mainSectionDrinks, .aboutDrinksInfo {
     max-width: 80rem;
-    margin: 6rem 0;
+    margin: 6rem 2rem;
     padding: 0 4rem 4rem;
     background: rgba(255, 255, 255, 0.910);
     border-radius: 10px;
@@ -640,6 +640,15 @@ main {
     border: 2px solid var(--blue-font);
 }
 
+/* About html */
+.headerAboutDrinks {
+    color: var(--green-color);
+    font-size: 3.2rem;
+}
+/* .hidden {
+    display: none;
+} */
+
 /*  */
 
 /* API fetch */
@@ -660,11 +669,6 @@ main {
 .sectionInput {
     border-radius: 16px 16px 0 0;
 }
-
-/* .sectionDrink {
-    min-height: 67rem;
-    border-radius: 0 0 16px 16px;
-} */
   
 h3 {
     width: 60%;
