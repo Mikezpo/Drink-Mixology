@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const apiFetchContainers = document.querySelectorAll('.ingredientNameContainer')
   // General Random Cocktail API Fetch
   const randomCocktailFetch = document.querySelector('.shakeBtn');
+  // User Input Cocktail fetch
+  const userCocktailFetch = document.querySelector('.userInputBtn');
   // Get the alcoholic and non-alcoholic sections
   const alcoholicSection = document.querySelector(".alcoholic");
   const nonAlcoholicSection = document.querySelector(".non-alcoholic");
@@ -49,8 +51,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const nonAlcFetchInfoSection = document.querySelector('.nonAlcFetchInfo');
   // General random cocktail
   const randomCocktailFetchDisplay = document.querySelector('.randomCocktailDiv');
+  // User Input cocktail display
+  const userCocktailFetchDisplay = document.querySelector('.userCocktailDivDisplay');
+  
 
-  // Helper functions
+  // Show/Hide Sections functions
   function hideSection(section) {
     section.classList.remove("show");
     section.classList.add("hideBoxes");
@@ -68,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
       hideSection(nonAlcoholicSection);
       hideSection(apiFetchSection);
       hideSection(nonAlcFetchInfoSection);
-      hideSection(randomCocktailFetchDisplay);
+      // hideSection(randomCocktailFetchDisplay);
     } else {
       hideSection(alcoholicSection);
       hideSection(apiFetchSection);
@@ -81,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
       hideSection(alcoholicSection);
       hideSection(apiFetchSection);
       hideSection(nonAlcFetchInfoSection);
-      hideSection(randomCocktailFetchDisplay);
+      // hideSection(randomCocktailFetchDisplay);
     } else {
       hideSection(nonAlcoholicSection);
       hideSection(nonAlcFetchInfoSection);
@@ -100,6 +105,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   randomCocktailFetch.addEventListener('click', function() {
     showSection(randomCocktailFetchDisplay);
+    hideSection(alcoholicSection);
+    hideSection(nonAlcoholicSection);
+    hideSection(apiFetchSection);
+    hideSection(nonAlcFetchInfoSection);
+  });
+
+  userCocktailFetch.addEventListener('click', function(){
+    showSection(userCocktailFetchDisplay);
     hideSection(alcoholicSection);
     hideSection(nonAlcoholicSection);
     hideSection(apiFetchSection);
@@ -357,9 +370,7 @@ function inputCocktailFetch() {
       document.querySelector('.userCocktailInstructions').innerText = randomDrink.strInstructions;
 
     } else {
-      document.querySelector('h2').innerText = "No drinks found";
-      document.querySelector('img').src = "";
-      document.querySelector('h3').innerText = "";
+      updateUserInputCocktailUIForNoDrinks();
     }
   })
   .catch(err => {
@@ -367,7 +378,22 @@ function inputCocktailFetch() {
   })
 }
 
+// Fetch User Input Cocktail Ingredients and measures
 
+function userInputIngredientsAndMeasures(userDrink, ) {
+  
+}
+
+
+// If no info is available
+
+function updateUserInputCocktailUIForNoDrinks() {
+  document.querySelector('.userCocktailName').innerText = 'No Drinks Found';
+      document.querySelector('.userCocktailInputImage').src = "";
+      document.querySelector('.userCocktailType').innerText = "";
+      document.querySelector('.userCocktailGlassType').innerText = "";
+      document.querySelector('.userCocktailInstructions').innerText = "";
+}
 
 
 
