@@ -15,6 +15,7 @@ for (const item of menuItems) {
 toggleButton.addEventListener('click', (event) => {
   event.stopPropagation();
   navbarLinks.classList.toggle('active');
+  // Console purely for debugging
   console.log('click');
 });
 
@@ -272,7 +273,6 @@ function updateUIForNoNonAlcoholicDrinks() {
   document.querySelector('.nonAlcCocktailIngredients').innerHTML = '';
 }
 
-
 //////////////////////// Fetch API for Random Cocktail
 
 document.querySelector('.shakeBtn').addEventListener('click', getRandom);
@@ -333,7 +333,39 @@ function updateRandomCocktailUIForNoDrinks() {
 }
 
 
+///////////////////// Fetch API for user input cocktail
 
+document.querySelector('.userInputBtn').addEventListener('click', inputCocktailFetch);
+
+
+function inputCocktailFetch() {
+  let drink = document.querySelector('input').value
+
+  fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.drinks);
+    const drinksCount = data.drinks.length;
+    if (drinksCount > 0) {
+      const randomIndex = Math.floor(Math.random() * drinksCount);
+      const randomDrink = data.drinks[randomIndex];
+    
+      document.querySelector('.userCocktailName').innerText = randomDrink.strDrink;
+      document.querySelector('.userCocktailInputImage').src = randomDrink.strDrinkThumb;
+      document.querySelector('.userCocktailType').innerText = randomDrink.strAlcoholic;
+      document.querySelector('.userCocktailGlassType').innerText = randomDrink.strGlass;
+      document.querySelector('.userCocktailInstructions').innerText = randomDrink.strInstructions;
+
+    } else {
+      document.querySelector('h2').innerText = "No drinks found";
+      document.querySelector('img').src = "";
+      document.querySelector('h3').innerText = "";
+    }
+  })
+  .catch(err => {
+    console.log(`Error ${err}`)
+  })
+}
 
 
 
