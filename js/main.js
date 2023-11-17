@@ -369,6 +369,8 @@ function inputCocktailFetch() {
       document.querySelector('.userCocktailGlassType').innerText = randomDrink.strGlass;
       document.querySelector('.userCocktailInstructions').innerText = randomDrink.strInstructions;
 
+      userInputIngredientsAndMeasures(userRandom, '.userCocktailIngredients')
+
     } else {
       updateUserInputCocktailUIForNoDrinks();
     }
@@ -380,8 +382,23 @@ function inputCocktailFetch() {
 
 // Fetch User Input Cocktail Ingredients and measures
 
-function userInputIngredientsAndMeasures(userDrink, ) {
-  
+
+// I'm not selecting the right class for the ul list, need to find it in the HTMl file
+
+function userInputIngredientsAndMeasures(userDrink, userInputaIngrContSelec) {
+  const userInputCocktailList = document.querySelector(userInputaIngrContSelec);
+  userInputCocktailList.innerHTML = ''; // Clear existing ingredients
+
+  for (let i = 1; i <= 15; i++) { // TheCocktailDB has up to 15 ingredients
+    const userIngredient = drink[`strIngredient${i}`];
+    const userMeasure = drink[`strMeaure${i}`];
+    if (userIngredient) {
+      const userListItem = document.createElement('li');
+      userListItem.textContent = `${userMeasure ? userMeasure : ''} ${userIngredient}`;
+      userInputCocktailList.appendChild(userListItem);
+    }
+  }
+
 }
 
 
